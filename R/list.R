@@ -63,7 +63,7 @@ list_parquet_files <- function() {
   fs::dir_ls(
     # Start from root of system.
     c(rawdata_path, workdata_path),
-    regexp = glue::glue(".*/part-.*\\.parquet$"),
+    regexp = ".*/part-.*\\.parquet$",
     recurse = TRUE,
     fail = FALSE,
     type = "file"
