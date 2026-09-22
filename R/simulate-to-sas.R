@@ -27,7 +27,7 @@
 #' sim_regs <- simulate_registers_with_paths(
 #'   registers = c("bef", "lmdb"),
 #'   years = c("1999", "2000"),
-#'   n = 10,
+#'   n = 10
 #' )
 #' sim_regs
 #'
