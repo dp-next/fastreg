@@ -15,7 +15,7 @@ get_project_id <- function() {
   if (is.na(id)) {
     cli::cli_warn(
       c(
-        "No project ID could be found in the path of the current working directory, so outputting `NA`.",
+        "No project ID (a folder name with only 6 digits) could be found in the current working directory path, so outputting `NA`.",
         "i" = "Your path is {fs::path_wd()}. Maybe change to a working directory within a project?"
       )
     )
