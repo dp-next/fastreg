@@ -9,7 +9,7 @@
 #' @noRd
 get_project_id <- function() {
   id <- fs::path_wd() |>
-    stringr::str_extract("/[0-9]+/") |>
+    stringr::str_extract("/[0-9]{6}/") |>
     stringr::str_remove_all("/")
 
   if (is.na(id) || id == "") {
