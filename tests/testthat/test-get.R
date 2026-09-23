@@ -10,27 +10,37 @@ test_that("`get_project_id()` extracts correct project ID", {
   expect_identical(project_id, "701010")
 })
 
-test_that("`get_project_id()` errors for IDs not of length 6", {
+test_that("`get_project_id()` returns NA and warns for project IDs shorter than 6 digits", {
   temp_dir <- fs::path_temp("70101/test/project/")
   fs::dir_create(temp_dir, recurse = TRUE)
-  project_id <- withr::with_dir(
+  withr::with_dir(
     temp_dir,
     {
-      expect_error(get_project_id(), regexp = "project ID")
-    }
-  )
-
-  temp_dir <- fs::path_temp("7010101/test/project/")
-  fs::dir_create(temp_dir, recurse = TRUE)
-  project_id <- withr::with_dir(
-    temp_dir,
-    {
-      expect_error(get_project_id(), regexp = "project ID")
+      expect_warning(get_project_id(), regexp = "`NA`")
+      expect_identical(
+        suppressWarnings(get_project_id()),
+        NA_character_
+      )
     }
   )
 })
 
-test_that("`get_project_id()` warns for not finding a project ID", {
+test_that("`get_project_id()` returns NA and warns for project IDs longer than 6 digits", {
+  temp_dir <- fs::path_temp("7010101/test/project/")
+  fs::dir_create(temp_dir, recurse = TRUE)
+  withr::with_dir(
+    temp_dir,
+    {
+      expect_warning(get_project_id(), regexp = "`NA`")
+      expect_identical(
+        suppressWarnings(get_project_id()),
+        NA_character_
+      )
+    }
+  )
+})
+
+test_that("`get_project_id()` returns NA and warns for only non-number folders", {
   temp_dir <- fs::path_temp("non-number/test/project/")
   fs::dir_create(temp_dir, recurse = TRUE)
   withr::with_dir(
