@@ -23,8 +23,8 @@ get_project_id <- function() {
 
   if (stringr::str_length(id) != 6 && !is.na(id)) {
     cli::cli_abort(
-      "Found an ID, but it was too long or too short to be a project ID.",
       c(
+        "Found an ID, but it was too long or too short to be a project ID.",
         "i" = "The ID found was {id}. Project IDs are expected to be 6 digits long."
       )
     )
