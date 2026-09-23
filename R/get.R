@@ -12,7 +12,7 @@ get_project_id <- function() {
     stringr::str_extract("/[0-9]{6}/") |>
     stringr::str_remove_all("/")
 
-  if (is.na(id) || id == "") {
+  if (is.na(id)) {
     cli::cli_warn(
       c(
         "No project ID could be found in the path of the current working directory, so outputting `NA`.",
@@ -21,14 +21,6 @@ get_project_id <- function() {
     )
   }
 
-  if (stringr::str_length(id) != 6 && !is.na(id)) {
-    cli::cli_abort(
-      c(
-        "Found an ID, but it was too long or too short to be a project ID.",
-        "i" = "The ID found was {id}. Project IDs are expected to be 6 digits long."
-      )
-    )
-  }
   id
 }
 
