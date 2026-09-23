@@ -59,16 +59,16 @@ file.
 sim_regs <- simulate_registers_with_paths(
   registers = c("bef", "lmdb"),
   years = c("1999", "2000"),
-  n = 10,
+  n = 10
 )
 sim_regs
 #> # A tibble: 4 × 2
 #>   output_path                                        data             
 #>   <fs::path>                                         <list>           
-#> 1 /tmp/RtmpCqO5lR/E/rawdata/701010/bef1999.sas7bdat  <tibble [10 × 3]>
-#> 2 /tmp/RtmpCqO5lR/E/rawdata/701010/bef2000.sas7bdat  <tibble [10 × 3]>
-#> 3 /tmp/RtmpCqO5lR/E/rawdata/701010/lmdb1999.sas7bdat <tibble [10 × 6]>
-#> 4 /tmp/RtmpCqO5lR/E/rawdata/701010/lmdb2000.sas7bdat <tibble [10 × 6]>
+#> 1 /tmp/Rtmp3glfQn/E/rawdata/701010/bef1999.sas7bdat  <tibble [10 × 3]>
+#> 2 /tmp/Rtmp3glfQn/E/rawdata/701010/bef2000.sas7bdat  <tibble [10 × 3]>
+#> 3 /tmp/Rtmp3glfQn/E/rawdata/701010/lmdb1999.sas7bdat <tibble [10 × 6]>
+#> 4 /tmp/Rtmp3glfQn/E/rawdata/701010/lmdb2000.sas7bdat <tibble [10 × 6]>
 
 sim_regs |>
   purrr::pwalk(write_to_sas)
