@@ -1,8 +1,8 @@
 #' Get the project ID from the current working directory path
 #'
 #' Gets a numeric project ID from the current working directory path by looking
-#' for a folder name with only digits. Errors if a project ID with an unexpected
-#' length was found.
+#' for a folder name containing only 6 digits. Outputs `NA` and warns if no
+#' project ID was found.
 #'
 #' @returns A 6-digit character string, or `NA` if no project ID is found in the
 #'   path.
