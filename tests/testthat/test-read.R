@@ -191,3 +191,31 @@ test_that("read in a register", {
     }
   )
 })
+
+test_that("read_register() reads register without year", {
+  # Force any previous connection to be dropped to avoid "View with name X already exists"-errors during tests.
+  gc()
+
+  # Create temp dir that's automatically deleted, so we don't need any clean up steps.
+  temp_dir <- withr::local_tempdir()
+  withr::local_options(list(
+    fastreg.project_rawdata_dir = fs::path(temp_dir, "E/rawdata/202020/"),
+    fastreg.project_workdata_dir = fs::path(temp_dir, "E/workdata/202020/")
+  ))
+
+  simulate_registers_with_paths(
+    "bef",
+    n = 10,
+    output_dir = get_project_rawdata_dir()
+  ) |>
+    purrr::pwalk(write_to_sas)
+
+  convert(
+    get_project_rawdata_dir() |>
+      list_sas_files(),
+    get_project_workdata_dir()
+  )
+
+  # Expect to be able to collect all register rows when reading the register.
+  expect_shape(dplyr::collect(read_register("bef")), nrow = 10)
+})
