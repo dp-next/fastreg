@@ -20,7 +20,8 @@ each release.
 
 ### Fix
 
-- 🐛 list and read register without year/with default Hive partition (#370)
+- 🐛 list and read register without year/with default Hive partition
+  (#370)
 
 ## 0.15.1 (2026-09-23)
 
