@@ -47,7 +47,9 @@ NULL
 #' @export
 list_parquet_datasets <- function() {
   list_parquet_files() |>
-    fs::path_filter(regexp = "year=[[:digit:]]{4}") |>
+    fs::path_filter(
+      regexp = "year=[[:digit:]]{4}|__HIVE_DEFAULT_PARTITION__"
+    ) |>
     fs::path_dir() |>
     fs::path_dir() |>
     unique() |>

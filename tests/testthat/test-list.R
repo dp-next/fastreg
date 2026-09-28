@@ -58,6 +58,16 @@ parquet_files <- tidyr::expand_grid(
       fs::path(fs::path_temp(root), project, register, year, file)
     }
   ) |>
+  # Add yearless register
+  c(
+    fs::path(fs::path_temp(
+      "workdata",
+      "701010",
+      "lpr_a_procregistrering",
+      "year=__HIVE_DEFAULT_PARTITION__",
+      "part-bae04.parquet"
+    ))
+  ) |>
   fs::path()
 
 purrr::walk(parquet_files, \(path) fs::dir_create(fs::path_dir(path)))
