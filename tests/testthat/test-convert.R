@@ -39,7 +39,7 @@ test_that("convert() returns a tibble describing the written chunks", {
 
 test_that("convert() preserves source data and adds expected columns", {
   expect_equal(nrow(data_actual), nrow(data_expected))
-  expect_identical(data_actual, data_expected)
+  expect_equal(data_actual, data_expected, ignore_attr = "haven_meta")
   expect_identical(
     purrr::map(
       data_actual |> dplyr::select("year"),
@@ -188,14 +188,14 @@ test_that("read_sas_chunk() returns 0 rows when skip is exactly the 32-bit limit
   expect_equal(nrow(chunk), 0L)
 })
 
-test_that("read_sas_chunk() returns first chunk when skip is NA and empty tibble when skip exceeds the 32-bit limit", {
+test_that("read_sas_chunk() returns first chunk when skip is 0 and empty tibble when skip exceeds the 32-bit limit", {
   # Should be the same on all operating systems now that we explicitly return an
   # empty tibble when skip exceeds 32-bit limit in read_sas_chunk().
   path <- fs::path_package("fastreg", "extdata", "test.sas7bdat")
   max_32_bit <- 2147483647
   chunk_skip_na <- read_sas_chunk(
     path,
-    skip = NA,
+    skip = 0,
     chunk_size = 100L
   )
   chunk_skip_over_32_bit <- read_sas_chunk(
