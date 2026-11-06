@@ -39,7 +39,6 @@ Suggests:
     tidyr,
     dbplyr,
     devtools,
-    duckdb,
     knitr,
     qs2,
     quarto,
