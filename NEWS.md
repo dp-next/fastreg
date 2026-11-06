@@ -16,6 +16,19 @@ individual release will not have many changes within it. Below is a list
 of the releases we've made so far, along with what was changed within
 each release.
 
+## 0.15.3 (2026-10-29)
+
+### Refactor
+
+- ♻️ use Typst for log output (#382)
+
+## 0.15.2 (2026-09-28)
+
+### Fix
+
+- 🐛 list and read register without year/with default Hive partition
+  (#370)
+
 ## 0.15.1 (2026-09-23)
 
 ### Fix

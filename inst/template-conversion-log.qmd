@@ -1,11 +1,15 @@
 ---
 title: Conversion log
 format:
-   pdf:
+   typst:
       toc: true
 execute:
   echo: false
   message: false
+
+knitr:
+  opts_chunk:
+    dev: svglite
 ---
 
 ## About this log
