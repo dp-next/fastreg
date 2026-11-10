@@ -16,6 +16,12 @@ individual release will not have many changes within it. Below is a list
 of the releases we've made so far, along with what was changed within
 each release.
 
+## 0.15.4 (2026-11-10)
+
+### Refactor
+
+- :recycle: allow either `workdata` or `rawdata` for `read_register()` (#378)
+
 ## 0.15.3 (2026-10-29)
 
 ### Refactor
