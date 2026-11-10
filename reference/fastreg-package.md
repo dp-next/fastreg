@@ -33,3 +33,9 @@ Other contributors:
 - Steno Diabetes Center Aarhus \[copyright holder\]
 
 - Aarhus University \[copyright holder\]
+
+- Anders Aasted Isaksen <andaas@rm.dk>
+  ([ORCID](https://orcid.org/0000-0001-8457-5466)) \[contributor\]
+
+- Daniel Skak Mazhari-Jensen <daskmaje@hst.aau.dk>
+  ([ORCID](https://orcid.org/0000-0003-1180-7734)) \[contributor\]
