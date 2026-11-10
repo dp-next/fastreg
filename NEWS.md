@@ -20,7 +20,8 @@ each release.
 
 ### Refactor
 
-- :recycle: allow either `workdata` or `rawdata` for `read_register()` (#378)
+- :recycle: allow either `workdata` or `rawdata` for `read_register()`
+  (#378)
 
 ## 0.15.3 (2026-10-29)
 
