@@ -31,6 +31,8 @@ Other contributors:
 \itemize{
   \item Steno Diabetes Center Aarhus [copyright holder]
   \item Aarhus University [copyright holder]
+  \item Anders Aasted Isaksen \email{andaas@rm.dk} (\href{https://orcid.org/0000-0001-8457-5466}{ORCID}) [contributor]
+  \item Daniel Skak Mazhari-Jensen \email{daskmaje@hst.aau.dk} (\href{https://orcid.org/0000-0003-1180-7734}{ORCID}) [contributor]
 }
 
 }
