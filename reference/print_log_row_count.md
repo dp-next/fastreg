@@ -33,5 +33,5 @@ print_log_row_count(conversion_log)
 #> 
 #> |Input (.sas7bdat)                              |Output (.parquet)                                  | Row count|
 #> |:----------------------------------------------|:--------------------------------------------------|---------:|
-#> |../../../../_temp/Library/fastreg/extdata/test |...est/year=__HIVE_DEFAULT_PARTITION__/part-01505e |      1000|
+#> |../../../../_temp/Library/fastreg/extdata/test |...est/year=__HIVE_DEFAULT_PARTITION__/part-ba7121 |      1000|
 ```
